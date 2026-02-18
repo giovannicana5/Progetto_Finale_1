@@ -1,13 +1,8 @@
 <x-layout>
-    <div class="container-fluid text-center bg-body-tertiary">
-        <div class="row vh-100 justify-content-center align-items-center">
+    <div class="container-fluid">
+        <div class="row height-custom justify-content-center align-items-center text-center">
             <div class="col-12">
-                <h1 class="display-4">Presto.it</h1>
-                <div class="my-3">
-                    @auth
-                        <a class="btn btn-dark" href="{{route('create.article')}}">Pubblica un articolo</a>
-                    @endauth
-                </div>
+                <h1 class="display-1">Tutti gli articoli</h1>
             </div>
         </div>
         <div class="row height-custom justify-content-center align-items-center py-5">
@@ -21,5 +16,8 @@
                 </div>
             @endforelse
         </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div>{{$articles->links()}}</div>
     </div>
 </x-layout>
