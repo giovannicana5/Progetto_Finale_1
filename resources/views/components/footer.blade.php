@@ -60,6 +60,11 @@
                     <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
                     <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
                 </div>
+                <div class="col-md-5 offset-md-1 mb-3 text-center">
+                    <h5>Vuoi diventare revisore</h5>
+                    <p>Cliccando il bottone sottostante farai richiesta al nostro admin</p>
+                    <a href="{{route('become.revisor')}}" class="btn btn-success">Diventa revisore</a>
+                </div>
                 <!-- Grid column -->
             </div>
             <!-- Grid row -->

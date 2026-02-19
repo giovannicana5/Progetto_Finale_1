@@ -13,6 +13,11 @@
                     <a class="nav-link" aria-current="page" href="{{route('article.index')}}">Tutti gli articoli</a>
                 </li>
                 @auth
+                    @if(Auth::user()->is_revisor)
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-success btn-sm position-relative w-sm-25" href="{{route('revisor.index')}}">Zona revisore <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{App\Models\Article::toBeRevisedCount()}}</span></a>
+                        </li>
+                    @endif
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ciao, {{Auth::user()->name}}</a>
                         <ul class="dropdown-menu">
@@ -20,7 +25,7 @@
                                 <a class="dropdown-item" href="{{route('create.article')}}">Crea</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('form-logout').submit();">Logout</a>
+                                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
                             </li>
                             <form action="{{route('logout')}}" method="POST" class="d-none" id="form-logout">@csrf</form>
                             {{-- <li>
