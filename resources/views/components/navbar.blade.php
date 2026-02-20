@@ -68,10 +68,12 @@
                     </li>
                 @endauth
             </ul>
-            {{-- <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> --}}
+            <form class="d-flex ms-auto" role="search" action="{{route('article.search')}}" method="GET">
+                <div class="input-group">
+                    <input type="search" name="query" class="form-control me-2" placeholder="Search" aria-label="search">
+                    <button type="submit" class="input-group-text btn btn-outline-success" id="basic-addon2">Search</button>
+                </div>
+            </form>
         </div>
     </div>
 </nav>
