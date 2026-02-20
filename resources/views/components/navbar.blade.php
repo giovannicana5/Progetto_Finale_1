@@ -72,6 +72,9 @@
                 <div class="input-group">
                     <input type="search" name="query" class="form-control me-2" placeholder="Search" aria-label="search">
                     <button type="submit" class="input-group-text btn btn-outline-success" id="basic-addon2">Search</button>
+                    <x_locale lang="it" />
+                    <x_locale lang="en" />
+                    <x_locale lang="es" />
                 </div>
             </form>
         </div>
