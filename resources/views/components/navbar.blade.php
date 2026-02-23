@@ -66,17 +66,17 @@
                             </li>
                         </ul>
                     </li>
-                    @endauth
-                </ul>
-                <form class="d-flex ms-auto" role="search" action="{{route('article.search')}}" method="GET">
-                    <div class="input-group">
-                        <input type="search" name="query" class="form-control me-2" placeholder="Search" aria-label="search">
-                        <button type="submit" class="input-group-text btn btn-outline-success" id="basic-addon2">Search</button>
-                        <x-_locale lang="en" />
-                        <x-_locale lang="es" />
-                        <x-_locale lang="it" />
-                    </div>
+                @endauth
+            </ul>
+            <form class="d-flex ms-auto" role="search" action="{{route('article.search')}}" method="GET">
+                <div class="input-group">
+                    <input type="search" name="query" class="form-control me-2" placeholder="Search" aria-label="search">
+                    <button type="submit" class="input-group-text btn btn-outline-success" id="basic-addon2">Search</button>
+                </div>
             </form>
+            <x-_locale lang="en" />
+            <x-_locale lang="es" />
+            <x-_locale lang="it" />
         </div>
     </div>
 </nav>

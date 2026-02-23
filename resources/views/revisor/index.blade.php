@@ -12,6 +12,8 @@
                 <div class="col-5 alert alert-success text-center shadow rounded">{{session('message')}}</div>
             </div>
         @endif
+
+        @if ($article_to_check)
         @if($article_to_check->images->count())
             @foreach($article_to_check->images as $key => $image)
                 <div class="col-6 col-md-4 mb-4">
@@ -19,16 +21,17 @@
                 </div>
             @endforeach
         @else
-            <div class="row justify-content-center pt-5">
-                <div class="col-md-8">
-                    <div class="row justify-content-center">
-                        @for($i = 0; $i < 6; $i++)
-                            <div class="col-6 col-md-4 mb-4 text-center">
-                                <img src="https://picsum.photos/300" class="img-fluid rounded shadow" alt="Immagine segnaposto">
-                            </div>
-                        @endfor
-                    </div>
+            <div class="col-9 col-md-6">
+                <div class="row justify-content-center align-items-center">
+                    @for ($i = 0; $i < 6; $i++)
+                        <div class="col-12 col-md-4 text-center">
+                            <img src="https://picsum.photos/300" alt="immagine articolo" class="img-fluid rounded mb-3">
+                        </div>
+                    @endfor
                 </div>
+            </div>  
+        @endif
+            <div class="row justify-content-center pt-5">
                 <div class="col-md-4 ps-4 d-flex flex-column justify-content-between">
                     <div>
                         <h1>{{$article_to_check->title}}</h1>
@@ -50,7 +53,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div>  
         @else
             <div class="row justify-content-center align-items-center height-custom text-center">
                 <div class="col-12">
