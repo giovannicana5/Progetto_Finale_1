@@ -10,7 +10,7 @@
                     <a class="nav-link" aria-current="page" href="{{route('homepage')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{route('article.index')}}">Tutti gli articoli</a>
+                    <a class="nav-link" aria-current="page" href="{{route('article.index')}}">{{ __('ui.allArticles') }}</a>
                 </li>
                 @auth
                     @if(Auth::user()->is_revisor)
@@ -66,16 +66,16 @@
                             </li>
                         </ul>
                     </li>
-                @endauth
-            </ul>
-            <form class="d-flex ms-auto" role="search" action="{{route('article.search')}}" method="GET">
-                <div class="input-group">
-                    <input type="search" name="query" class="form-control me-2" placeholder="Search" aria-label="search">
-                    <button type="submit" class="input-group-text btn btn-outline-success" id="basic-addon2">Search</button>
-                    <x_locale lang="it" />
-                    <x_locale lang="en" />
-                    <x_locale lang="es" />
-                </div>
+                    @endauth
+                </ul>
+                <form class="d-flex ms-auto" role="search" action="{{route('article.search')}}" method="GET">
+                    <div class="input-group">
+                        <input type="search" name="query" class="form-control me-2" placeholder="Search" aria-label="search">
+                        <button type="submit" class="input-group-text btn btn-outline-success" id="basic-addon2">Search</button>
+                        <x-_locale lang="en" />
+                        <x-_locale lang="es" />
+                        <x-_locale lang="it" />
+                    </div>
             </form>
         </div>
     </div>
