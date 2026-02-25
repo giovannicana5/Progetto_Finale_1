@@ -3,9 +3,9 @@
 namespace App\Jobs;
 
 use App\Models\Image;
-use Google\Cloud\Vision\V1\Client\ImageAnnotatorClient;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
@@ -49,5 +49,6 @@ class GoogleVisionSafeSearch implements ShouldQueue
         $i->racy = $likelihoodName[$racy];
         $i->medical = $likelihoodName[$medical];
         $i->violence = $likelihoodName[$violence];
+        $i->save();
     }
 }
